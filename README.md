@@ -13,7 +13,7 @@ In this project, you will find:
 
 To get started, simply clone the repository and follow these instructions:
 
-1. Go to your terminal (´cmd´ + ´space´) 
-2. Go to your folder (´cd path/my_folder/´). If you want to create a new folder, type ´mkdir my_new_folder´
-3. Copy the link of the repository and go to the terminal and type ´git clone git_repo_url´
+1. Go to your terminal (`cmd` + `space`) 
+2. Go to your folder (`cd path/my_folder/`). If you want to create a new folder, type `mkdir my_new_folder`
+3. Copy the link of the repository and go to the terminal and type `git clone git_repo_url`
 
