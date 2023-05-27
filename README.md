@@ -2,7 +2,7 @@
 
 The Alfa Centauri Project is designed to help you master the basics of data analytics, focusing on  Python, SQL, and visualization tools.
 
-You can read more in the [Alfa Centauri Docu](https://lauratrujillot.github.io/alfa-centauri-project/where you will find:
+You can read more in the [Alfa Centauri Docu](https://lauratrujillot.github.io/alfa-centauri-project/), where you will find:
 
 - [0.Installation](https://lauratrujillot.github.io/alfa-centauri-project/sections/0-homebrew.html) : How to install Homebrew, Python, git, and other packages.
 
