@@ -2,8 +2,19 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+root: sections/intro
+parts:
+- caption: Installation
+  chapters:
+  - file: sections/0-homebrew
+  - file: sections/0-git
+  - file: sections/0-python
+- caption: Python
+  chapters:
+  - file: sections/1-python
+- caption: SQL
+  chapters:
+  - file: sections/2-sql
+- caption: Business Intelligence
+  chapters:
+  - file: sections/3-bi
