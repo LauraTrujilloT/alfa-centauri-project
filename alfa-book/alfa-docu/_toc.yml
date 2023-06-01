@@ -9,6 +9,7 @@ parts:
   - file: sections/0-homebrew
   - file: sections/0-git
   - file: sections/0-python
+  - file: sections/0-ohmyzsh
 - caption: Python
   chapters:
   - file: sections/1-python
