@@ -13,6 +13,8 @@ parts:
 - caption: Python
   chapters:
   - file: sections/1-python
+  - file: sections/clase_1
+  - file: sections/clase_2
 - caption: SQL
   chapters:
   - file: sections/2-sql
