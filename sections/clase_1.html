@@ -1,0 +1,906 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Clase 1: Data Types &#8212; Alfa Centauri Project Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sections/clase_1';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Clase 2: Conditional Statements" href="clase_2.html" />
+    <link rel="prev" title="Python" href="1-python.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/alpha-logo.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/alpha-logo.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Alfa Centauri Docu
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0-homebrew.html">How to install Homebrew</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0-git.html">How to install Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0-python.html">How to install Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0-ohmyzsh.html">OhMyZSH Installation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1-python.html">Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clase 1: Data Types</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="clase_2.html">Clase 2: Conditional Statements</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">SQL</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2-sql.html">SQL</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Business Intelligence</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="3-bi.html">Business Intelligence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/LauraTrujilloT/alfa-centauri-project.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/sections/clase_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Clase 1: Data Types</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Clase 1: Data Types</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mi-primer-notebook">Mi primer notebook</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-objetos">Tipos de objetos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones">Funciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hw">HW (?)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="clase-1-data-types">
+<h1>Clase 1: Data Types<a class="headerlink" href="#clase-1-data-types" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mi-primer-notebook">
+<h1>Mi primer notebook<a class="headerlink" href="#mi-primer-notebook" title="Permalink to this heading">#</a></h1>
+<p>Esta es una celda markdown, para texto.</p>
+<p>Esta es una fórmula fancy, usando sintaxis de LateX:  <span class="math notranslate nohighlight">\( y_{i} = x^2\)</span></p>
+<p>Esto es un snippet de código (sólo lectura):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Esto es un comentario en python. La siguiente linea importa librería numpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="c1">#Crear un objeto tipo int (numero entero)</span>
+<span class="n">n_int</span> <span class="o">=</span> <span class="mi">9</span> 
+<span class="c1"># Crear un objeto tipo lista (vacia)</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Esta celda es para codigo</span>
+<span class="c1">#Vamos a imprimir usando python un mensaje de &quot;consola&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
+</pre></div>
+</div>
+</div>
+</div>
+<section id="tipos-de-objetos">
+<h2>Tipos de objetos<a class="headerlink" href="#tipos-de-objetos" title="Permalink to this heading">#</a></h2>
+<img src="https://image.slidesharecdn.com/datatypesinpython-210616122138/85/data-types-in-python-2-320.jpg?cb=1668970683"  width="300" height="300">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">#int</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="c1">#float</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;3&#39;</span> <span class="c1">#str</span>
+<span class="n">z</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">#bool</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#list</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span> <span class="c1">#list</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">()</span> <span class="c1">#tuple </span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span> <span class="c1">#tuple</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#dict </span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span> <span class="c1">#dict</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#When in doubt : </span>
+<span class="nb">type</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear 2 variables tipo float </span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">5.4</span><span class="p">,</span> <span class="mf">8.3</span>
+<span class="c1"># Sumar x y y guardar en variable z </span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x: &#39;</span><span class="p">,</span> <span class="n">x</span> <span class="p">,</span> <span class="s1">&#39;y: &#39;</span><span class="p">,</span> <span class="n">y</span> <span class="p">,</span> <span class="s1">&#39;la suma de ambos es: &#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="c1"># Verificar si la palabra &quot;hi&quot; esta en variable p </span>
+<span class="n">p</span> <span class="o">=</span> <span class="s2">&quot;hi, how&#39;s it going&quot;</span>
+<span class="c1">#p ?? </span>
+
+<span class="c1"># Verificar si es posible las sgtes operaciones</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> 
+<span class="n">q2</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">p</span>
+<span class="c1">#print(q2)</span>
+<span class="n">q3</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="n">p</span> 
+<span class="n">q4</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mf">3.0</span> 
+<span class="c1">#print(q4)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x:  5.4 y:  8.3 la suma de ambos es:  13.700000000000001
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular promedio </span>
+<span class="n">data_col</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mf">65.4</span><span class="p">,</span> <span class="mf">43.5</span><span class="p">]</span> <span class="c1">#list de elementos tipo int, float</span>
+
+<span class="c1"># Promedio = sum of all observations / total number observations</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data_col</span><span class="p">)</span> <span class="c1"># 40 + 65 + 65.4 + 43.5 = float</span>
+<span class="n">den</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_col</span><span class="p">)</span> <span class="c1"># cuentame cuantos elementos tiene esa lista (4 elementos)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El numerador es : &#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">El denominador es: &quot;</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>
+
+<span class="n">avg</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El promedio es : &#39;</span><span class="p">,</span> <span class="n">avg</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El numerador es :  223.9 
+El denominador es:  4
+El promedio es :  55.975
+</pre></div>
+</div>
+</div>
+</div>
+<section id="funciones">
+<h3>Funciones<a class="headerlink" href="#funciones" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(f(x)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cata_arithmetic_mean</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">den</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_col</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mf">45.5</span><span class="p">,</span> <span class="mf">35.34</span><span class="p">]</span>
+<span class="n">cata_arithmetic_mean</span><span class="p">(</span><span class="n">data_col</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36.21
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.utils.data</span> <span class="kn">import</span> <span class="n">download_file</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlencode</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">in_a_galaxy_far_far_away</span><span class="p">(</span><span class="n">galaxy_name</span><span class="o">=</span><span class="s1">&#39;NGC234&#39;</span><span class="p">,</span> <span class="n">pixels</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
+    <span class="n">im_size</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">arcmin</span>
+    <span class="n">im_pixels</span> <span class="o">=</span> <span class="n">pixels</span>
+    <span class="n">urlCutOut</span> <span class="o">=</span> <span class="s1">&#39;http://skyservice.pha.jhu.edu/DR12/ImgCutout/getjpeg.aspx&#39;</span>
+    <span class="n">fuente</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="o">.</span><span class="n">from_name</span><span class="p">(</span><span class="n">galaxy_name</span><span class="p">)</span> <span class="c1">#NGC234</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coordinates&quot;</span><span class="p">,</span> <span class="n">fuente</span><span class="p">)</span>
+    <span class="n">query_string</span> <span class="o">=</span> <span class="n">urlencode</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="n">fuente</span><span class="o">.</span><span class="n">ra</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span>
+                                <span class="n">dec</span><span class="o">=</span><span class="n">fuente</span><span class="o">.</span><span class="n">dec</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span>
+                                <span class="n">width</span><span class="o">=</span><span class="n">im_pixels</span><span class="p">,</span> 
+                                <span class="n">height</span><span class="o">=</span><span class="n">im_pixels</span><span class="p">,</span>
+                                <span class="n">scale</span><span class="o">=</span><span class="n">im_size</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">arcsec</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="o">/</span><span class="n">im_pixels</span><span class="p">))</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">urlCutOut</span> <span class="o">+</span> <span class="s1">&#39;?&#39;</span> <span class="o">+</span> <span class="n">query_string</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">query_string</span><span class="p">)</span>
+    <span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;assets/&quot;</span><span class="o">+</span><span class="n">galaxy_name</span><span class="o">+</span><span class="s2">&quot;.jpg&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;assets/&quot;</span><span class="o">+</span><span class="n">galaxy_name</span><span class="o">+</span><span class="s2">&quot;.jpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">galaxies</span> 
+
+<span class="n">galaxies</span><span class="o">.</span><span class="n">in_a_galaxy_far_far_away</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">galaxies</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">galaxies</span><span class="o">.</span><span class="n">in_a_galaxy_far_far_away</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;galaxies&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">in_a_galaxy_far_far_away</span><span class="p">(</span><span class="n">galaxy_name</span><span class="o">=</span><span class="s1">&#39;NGC234&#39;</span><span class="p">,</span> <span class="n">pixels</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coordinates &lt;SkyCoord (ICRS): (ra, dec) in deg
+    (10.88492397, 14.34261046)&gt;
+ra=10.884923971&amp;dec=14.34261046439&amp;width=512&amp;height=512&amp;scale=1.40625
+</pre></div>
+</div>
+<img alt="../_images/eccbf2a6342027594a916334c93f94e2e2ca7e748a0873ecc5469f9bd3306168.jpg" src="../_images/eccbf2a6342027594a916334c93f94e2e2ca7e748a0873ecc5469f9bd3306168.jpg" />
+</div>
+</div>
+</section>
+<section id="hw">
+<h3>HW (?)<a class="headerlink" href="#hw" title="Permalink to this heading">#</a></h3>
+<p>Crear función para calcular Customer Lifetime value</p>
+<div class="math notranslate nohighlight">
+\[ CLTV = \frac{AVG_{order value} \times Purchase_{freq}}{churn_{rate}} \times profit_{margin}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Si no esta instalado pandas:</span>
+<span class="c1"># !pip3 install pandas</span>
+<span class="c1"># !pip3 install openpyxl</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+
+<span class="c1"># ! Ignorar esta parte (solo correr/ejecutar)</span>
+
+<span class="n">uk_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../datasets/online_retail_uk.xlsx&#39;</span><span class="p">)</span>
+<span class="n">uk_data_group</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../datasets/online_retail_uk_group.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Calculo de Average Order Value</span>
+<span class="n">uk_data_group</span><span class="p">[</span><span class="s1">&#39;avg_order_value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uk_data_group</span><span class="p">[</span><span class="s1">&#39;spent_money&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">uk_data_group</span><span class="p">[</span><span class="s1">&#39;num_transactions&#39;</span><span class="p">]</span>
+
+<span class="c1"># Calculo de Purchase Frequency </span>
+<span class="n">purchase_frequency</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">uk_data_group</span><span class="p">[</span><span class="s1">&#39;num_transactions&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">uk_data_group</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Repeat Rate</span>
+<span class="n">repeat_rate</span> <span class="o">=</span> <span class="n">uk_data_group</span><span class="p">[</span><span class="n">uk_data_group</span><span class="o">.</span><span class="n">num_transactions</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">uk_data_group</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1">#Churn Rate</span>
+<span class="n">churn_rate</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">repeat_rate</span>
+
+<span class="c1"># Profit Margin</span>
+<span class="n">uk_data_group</span><span class="p">[</span><span class="s1">&#39;profit_margin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uk_data_group</span><span class="p">[</span><span class="s1">&#39;spent_money&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.05</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Funcion para calcular Customer Lifetime Value</span>
+<span class="k">def</span> <span class="nf">compute_clv</span><span class="p">(</span><span class="n">avg_order</span><span class="o">=</span><span class="n">uk_data_group</span><span class="p">[</span><span class="s1">&#39;avg_order_value&#39;</span><span class="p">],</span> <span class="n">purchase_frequency</span><span class="o">=</span><span class="n">purchase_frequency</span><span class="p">,</span> <span class="n">churn_rate</span><span class="o">=</span><span class="n">churn_rate</span><span class="p">,</span> <span class="n">profit_margin</span><span class="o">=</span><span class="n">uk_data_group</span><span class="p">[</span><span class="s1">&#39;profit_margin&#39;</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Esta funcion te ayuda a calcular el CLV </span>
+<span class="sd">    (args)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">uk_data_group</span><span class="p">[</span><span class="s1">&#39;CLTV&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Crear calculo aquí (borrar 0)</span>
+    <span class="k">return</span> <span class="n">uk_data_group</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compute_clv</span><span class="p">()</span>
+<span class="n">uk_data_group</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;assets/cata_tarea.xlsx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CustomerID</th>
+      <th>num_days</th>
+      <th>num_transactions</th>
+      <th>num_units</th>
+      <th>spent_money</th>
+      <th>avg_order_value</th>
+      <th>profit_margin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12346.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>74215</td>
+      <td>77183.60</td>
+      <td>77183.600000</td>
+      <td>3859.1800</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>12747.0</td>
+      <td>366</td>
+      <td>103</td>
+      <td>1275</td>
+      <td>4196.01</td>
+      <td>40.737961</td>
+      <td>209.8005</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12748.0</td>
+      <td>372</td>
+      <td>4596</td>
+      <td>25748</td>
+      <td>33719.73</td>
+      <td>7.336756</td>
+      <td>1685.9865</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>12749.0</td>
+      <td>209</td>
+      <td>199</td>
+      <td>1471</td>
+      <td>4090.88</td>
+      <td>20.557186</td>
+      <td>204.5440</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12820.0</td>
+      <td>323</td>
+      <td>59</td>
+      <td>722</td>
+      <td>942.34</td>
+      <td>15.971864</td>
+      <td>47.1170</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3916</th>
+      <td>18280.0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>45</td>
+      <td>180.60</td>
+      <td>18.060000</td>
+      <td>9.0300</td>
+    </tr>
+    <tr>
+      <th>3917</th>
+      <td>18281.0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>54</td>
+      <td>80.82</td>
+      <td>11.545714</td>
+      <td>4.0410</td>
+    </tr>
+    <tr>
+      <th>3918</th>
+      <td>18282.0</td>
+      <td>118</td>
+      <td>12</td>
+      <td>103</td>
+      <td>178.05</td>
+      <td>14.837500</td>
+      <td>8.9025</td>
+    </tr>
+    <tr>
+      <th>3919</th>
+      <td>18283.0</td>
+      <td>333</td>
+      <td>756</td>
+      <td>1397</td>
+      <td>2094.88</td>
+      <td>2.771005</td>
+      <td>104.7440</td>
+    </tr>
+    <tr>
+      <th>3920</th>
+      <td>18287.0</td>
+      <td>158</td>
+      <td>70</td>
+      <td>1586</td>
+      <td>1837.28</td>
+      <td>26.246857</td>
+      <td>91.8640</td>
+    </tr>
+  </tbody>
+</table>
+<p>3921 rows × 7 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sections"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1-python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="clase_2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Clase 2: Conditional Statements</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Clase 1: Data Types</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mi-primer-notebook">Mi primer notebook</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-objetos">Tipos de objetos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones">Funciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hw">HW (?)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Does it really matter?
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
