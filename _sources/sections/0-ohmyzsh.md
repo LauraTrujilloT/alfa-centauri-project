@@ -1,6 +1,6 @@
 # OhMyZSH Installation
 
->>> [YT Video](https://youtu.be/9eJ0HHHNuls)
+> [YT Video](https://youtu.be/9eJ0HHHNuls)
 
 1. Install Oh My Zsh: 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
